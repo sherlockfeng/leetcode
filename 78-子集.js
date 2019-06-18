@@ -19,4 +19,50 @@ var subsets = function(nums) {
     return result;
 };
 
-console.log(subsets([0]));
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var subsets = function(nums) {
+
+    let res = [];
+    const len = nums.length;
+    
+    dfs([], 0);
+    
+    function dfs(tmp, leves) {
+        if (leves === len) {
+            res.push(tmp.slice(0));
+            return;
+        }
+        dfs(tmp.slice(0), leves + 1);
+
+        tmp.push(nums[leves]);
+        dfs(tmp, leves + 1);
+    }
+
+    return res;
+};
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var subsets = function(nums) {
+
+    let res = [[]];
+    const len = nums.length;
+    for (let i = 0; i < len; i++) {
+        let temp = [];
+        for (let j = 0; j < res.length; j++) {
+            let a = res[j].slice(0);
+            a.push(nums[i]);
+            temp.push(a);
+        }
+        res = res.concat(temp);
+    }
+    return res;
+};
+
+
+console.log(subsets([1, 2, 3]));
