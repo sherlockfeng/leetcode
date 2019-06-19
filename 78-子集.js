@@ -64,5 +64,27 @@ var subsets = function(nums) {
     return res;
 };
 
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var subsets = function(nums) {
+    let res = [];
+    let temp = [];
+    
+    const dfs = (temp, leves) => {
+        res.push(temp.slice(0));
+        for (let i = leves; i < nums.length; i++) {
+            temp.push(nums[i]);
+            dfs(temp, i + 1);
+            temp.pop();
+        }
+    };
+
+    dfs(temp, 0);
+
+    return res;
+
+};
 
 console.log(subsets([1, 2, 3]));
