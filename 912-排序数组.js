@@ -161,3 +161,49 @@ var sortArray = function (nums) {
     }
     return nums;
 };
+
+/**
+* @param {number[]} nums  需要排序的数组
+* @return {number[]}  排序后的数组
+* 快速排序
+*/
+
+var sortArray = function (nums) {
+    const change = (a, b) => {
+        let c = nums[b];
+        nums[b] = nums[a];
+        nums[a] = c;
+    };
+    const partition = (num, lo, hi) => {
+        let i = lo;
+        let j = hi + 1;
+        while (true) {
+            while (num[++i] <= num[lo]) {
+                if (i === hi) {
+                    break;
+                }
+            }
+            while (num[--j] >= num[lo]) {
+                if (j === lo) {
+                    break;
+                }
+            }
+            if (i >= j) {
+                break;
+            }
+            change(i, j);
+        }
+        change(lo, j);
+        return j;
+    };
+    const sort = (num, lo, hi) => {
+        if (lo >= hi) {
+            return;
+        }
+        let j = partition(num, lo, hi);
+        sort(num, lo, j - 1);
+        sort(num, j + 1, hi);
+    };
+    sort(nums, 0, nums.length - 1);
+    return nums;
+};
