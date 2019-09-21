@@ -1,0 +1,27 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "leetcode和算法",
+  "main": "104-二叉树的最大深度.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherlockfeng/leetcode.git"
+  },
+  "author": "heyunfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sherlockfeng/leetcode/issues"
+  },
+  "homepage": "https://github.com/sherlockfeng/leetcode#readme"
+}
