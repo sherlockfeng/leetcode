@@ -68,7 +68,13 @@ class BST {
      * @return {number}
      */
     compare(a, b) {
-        return a - b;
+        if (typeof a === 'string' && typeof b === 'string') {
+            return b.localeCompare(a);
+        }
+        if (typeof a === 'number' && typeof b === 'number') {
+            return a - b;
+        }
+        throw new Error('节点key错误');
     }
 
     /**
@@ -234,6 +240,7 @@ class BST {
      * 删除最小节点
      *
      * @param {Node} node 树的根节点
+     * @return {Node} node
      */
     deleteMin(node) {
         if (node.left) {
@@ -241,15 +248,14 @@ class BST {
             node.N = this.nodeSize(node.left) + this.nodeSize(node.right) + 1;
             return node;
         }
-        else {
-            return node.right;
-        }
+        return node.right;
     }
 
     /**
      * 删除最大节点
      *
      * @param {Node} node 树的根节点
+     * @return {Node} node
      */
     deleteMax(node) {
         if (node.right) {
@@ -257,9 +263,7 @@ class BST {
             node.N = this.nodeSize(node.left) + this.nodeSize(node.right) + 1;
             return node;
         }
-        else {
-            return node.left;
-        }
+        return node.left;
     }
 
     /**
@@ -267,6 +271,7 @@ class BST {
      *
      * @param {Node} node 树的根节点
      * @param {number|string} key 需要删除的节点
+     * @return {Node}
      */
     delete(node, key) {
         if (node === null) {

@@ -1,5 +1,5 @@
 /**
-* @file 二叉树.js
+* @file 二叉堆.js
 * @author heyunfeng
 */
 
