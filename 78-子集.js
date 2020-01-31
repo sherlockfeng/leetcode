@@ -2,17 +2,18 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+var subsets = function (nums) {
     const len = nums.length;
     let num = Math.pow(2, len);
     let result = [];
     for (let i = 0; i < num; i++) {
         let temp = [];
-        const erString = parseInt(i).toString(2).split('').reverse();
+        const erString = parseInt(i, 10).toString(2).split('').reverse();
         for (let j = 0; j < erString.length; j++) {
             if (+erString[j]) {
                 temp.push(nums[j]);
             }
+
         }
         result.push(temp);
     }
@@ -23,18 +24,19 @@ var subsets = function(nums) {
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+var subsets = function (nums) {
 
     let res = [];
     const len = nums.length;
-    
+
     dfs([], 0);
-    
+
     function dfs(tmp, leves) {
         if (leves === len) {
             res.push(tmp.slice(0));
             return;
         }
+
         dfs(tmp.slice(0), leves + 1);
 
         tmp.push(nums[leves]);
@@ -48,7 +50,7 @@ var subsets = function(nums) {
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+var subsets = function (nums) {
 
     let res = [[]];
     const len = nums.length;
@@ -68,10 +70,10 @@ var subsets = function(nums) {
  * @param {number[]} nums
  * @return {number[][]}
  */
-var subsets = function(nums) {
+var subsets = function (nums) {
     let res = [];
     let temp = [];
-    
+
     const dfs = (temp, leves) => {
         res.push(temp.slice(0));
         for (let i = leves; i < nums.length; i++) {
