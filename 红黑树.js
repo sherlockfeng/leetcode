@@ -183,4 +183,34 @@ class RedBlackBST {
         node.N = this.nodeSize(node.left) + this.nodeSize(node.right) + 1;
         return node;
     }
+
+        /**
+     * 删除最小节点
+     *
+     * @param {Node} node 树的根节点
+     * @return {Node} node
+     */
+    deleteMin(node) {
+        if (node.left) {
+            node.left = this.deleteMin(node.left);
+            node.N = this.nodeSize(node.left) + this.nodeSize(node.right) + 1;
+            return node;
+        }
+        return node.right;
+    }
+
+    /**
+     * 删除最大节点
+     *
+     * @param {Node} node 树的根节点
+     * @return {Node} node
+     */
+    deleteMax(node) {
+        if (node.right) {
+            node.right = this.deleteMax(node.right);
+            node.N = this.nodeSize(node.left) + this.nodeSize(node.right) + 1;
+            return node;
+        }
+        return node.left;
+    }
 }
