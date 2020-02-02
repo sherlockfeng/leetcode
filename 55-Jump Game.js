@@ -4,7 +4,7 @@
  */
 
 /**
- * 其
+ * Jump Game
  *
  * @param {number[]} nums 输入数组
  * @return {boolean}

@@ -22,5 +22,3 @@ var isSubsequence = function(s, t) {
     }
     return true;
 };
-
-console.log(isSubsequence('abc', 'ahbgdc'));
