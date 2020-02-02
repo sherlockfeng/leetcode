@@ -4,7 +4,9 @@
  */
 
 /**
- * @param {number[]} nums
+ * 其
+ *
+ * @param {number[]} nums 输入数组
  * @return {boolean}
  */
 var canJump = function(nums) {
