@@ -32,4 +32,3 @@ var climbStairs = function(n) {
     }
     return trans(n);
 };
-console.log(climbStairs(44));

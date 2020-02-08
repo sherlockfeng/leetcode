@@ -88,5 +88,3 @@ var subsets = function (nums) {
     return res;
 
 };
-
-console.log(subsets([1, 2, 3]));

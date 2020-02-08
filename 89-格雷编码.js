@@ -40,5 +40,3 @@ var grayCode = function (n) {
     }
     return result;
 };
-
-console.log(grayCode(3));

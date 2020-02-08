@@ -23,5 +23,3 @@ var letterCasePermutation = function(S) {
     dfs(S, 0);
     return result;
 };
-
-console.log(letterCasePermutation('C'))

@@ -26,5 +26,3 @@ var rob = function(nums) {
     }
     return result[len - 1];
 };
-
-console.log(rob([2,7,9,3,1]))

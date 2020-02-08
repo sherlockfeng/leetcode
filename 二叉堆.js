@@ -79,6 +79,3 @@ class Heap {
         }
     }
 }
-
-let a = new Heap([1, 5, 73, 37, 3, 2, 1, 7]);
-console.log(a)

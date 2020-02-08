@@ -37,10 +37,3 @@ var wordBreak = function (s, wordDict) {
     };
     return check(s);
 };
-
-console.log(wordBreak(
-'catsanddog',
-["cat", "cats", "and", "sand", "dog"]
-));
-// "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-// ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]

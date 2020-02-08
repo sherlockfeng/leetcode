@@ -61,5 +61,3 @@ var subsetsWithDup = function(nums) {
 
     return res;
 };
-
-console.log(subsetsWithDup([1, 2, 2]))
