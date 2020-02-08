@@ -35,8 +35,3 @@ var minimumTotal = function (triangle) {
     }
     return min;
 };
-
-console.log(minimumTotal([
-    [-1],
-   [-2,-3]
-]));
