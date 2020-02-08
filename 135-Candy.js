@@ -42,5 +42,3 @@ var candy = function (ratings) {
     candysi.forEach((data, index) => total += Math.max(data, candysj[index]));
     return total;
 };
-
-console.log(candy([1, 3, 2, 2, 1]))
