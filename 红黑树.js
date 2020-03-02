@@ -162,10 +162,10 @@ class RedBlackBST {
             return new Node(key, val, RED);
         }
         const cmp = this.compare(node.key, key);
-        if (cmp > 0) {
+        if (cmp < 0) {
             node.right = this.privatePut(node.right, key, val);
         }
-        else if (cmp < 0) {
+        else if (cmp > 0) {
             node.left = this.privatePut(node.left, key, val);
         }
         else {
@@ -184,7 +184,7 @@ class RedBlackBST {
         return node;
     }
 
-        /**
+    /**
      * 删除最小节点
      *
      * @param {Node} node 树的根节点
