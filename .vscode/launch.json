@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/红黑树2.js",
+            "program": "${workspaceFolder}/1367-Linked List in Binary Tree.js",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
             "cwd": "${workspaceRoot}"
         }
