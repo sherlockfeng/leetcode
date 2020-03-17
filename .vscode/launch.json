@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/85-Maximal Rectangle.js",
+            "program": "${workspaceFolder}/486-Predict the Winner.js",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
             "cwd": "${workspaceRoot}"
         }
