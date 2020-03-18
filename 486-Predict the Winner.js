@@ -11,8 +11,7 @@
  * @param {number[]} nums 价格数组
  * @return {boolean}
  */
-// eslint-disable-next-line
-const PredictTheWinner = function (nums) {
+const predictTheWinner = function (nums) {
     const len = nums.length;
     const dp = Array.from({length: len}).map(() => []);
     const helper = (i, j) => {
@@ -36,4 +35,4 @@ const PredictTheWinner = function (nums) {
     return helper(0, len - 1) >= 0;
 };
 // eslint-disable-next-line
-console.log(PredictTheWinner([1, 5, 2]));
+console.log(predictTheWinner([1, 5, 2]));
