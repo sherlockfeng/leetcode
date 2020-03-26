@@ -11,35 +11,35 @@
  * @param {number[]} nums 被切分的数组
  * @return {boolean}
  */
-// const canPartition = function (nums) {
-//     const total = nums.reduce((acc, cur) => (acc + cur), 0);
-//     if (total % 2 !== 0) {
-//         return false;
-//     }
-//     const target = total / 2;
-//     const helper = (arr, tar) => {
-//         const len = arr.length;
-//         if (tar === 0) {
-//             return true;
-//         }
-//         if (len === 0 && tar > 0) {
-//             return false;
-//         }
-//         let result = false;
-//         for (let i = 0; i < len; i++) {
-//             if (tar >= arr[i]) {
-//                 const newArr = [...arr];
-//                 newArr.splice(i, 1);
-//                 result = helper(newArr, tar - arr[i]);
-//                 if (result) {
-//                     break;
-//                 }
-//             }
-//         }
-//         return result;
-//     };
-//     return helper(nums, target);
-// };
+const canPartition = function (nums) {
+    const total = nums.reduce((acc, cur) => (acc + cur), 0);
+    if (total % 2 !== 0) {
+        return false;
+    }
+    const target = total / 2;
+    const helper = (arr, tar) => {
+        const len = arr.length;
+        if (tar === 0) {
+            return true;
+        }
+        if (len === 0 && tar > 0) {
+            return false;
+        }
+        let result = false;
+        for (let i = 0; i < len; i++) {
+            if (tar >= arr[i]) {
+                const newArr = [...arr];
+                newArr.splice(i, 1);
+                result = helper(newArr, tar - arr[i]);
+                if (result) {
+                    break;
+                }
+            }
+        }
+        return result;
+    };
+    return helper(nums, target);
+};
 
 /**
  * Partition Equal Subset Sum
