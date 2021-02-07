@@ -4,7 +4,9 @@
   "description": "leetcode和算法",
   "main": "104-二叉树的最大深度.js",
   "dependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
