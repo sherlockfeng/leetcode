@@ -14,21 +14,22 @@ var detectCycle = function (head) {
     if (head === null) {
         return null;
     }
-    let slow = head, fast = head;
-    while (fast !== null) {
+    let slow = head;
+    let fast = head;
+    while (fast) {
         slow = slow.next;
         if (fast.next !== null) {
             fast = fast.next.next;
         } else {
             return null;
         }
-        if (fast === slow) {
-            let ptr = head;
-            while (ptr !== slow) {
-                ptr = ptr.next;
+        if (slow === fast) {
+            let pre = head;
+            while (pre !== slow) {
+                pre = pre.next;
                 slow = slow.next;
             }
-            return ptr;
+            return pre;
         }
     }
     return null;
