@@ -84,3 +84,32 @@ var trap = function (height) {
     return result;
 };
 trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]);
+
+const maxWater = arr => {
+    const len = arr.length;
+    let result = 0;
+
+    if (len < 3) {
+        return result;
+    }
+    const stack = [];
+    const top = () => stack[stack.length - 1];
+    const empty = () => !stack.length;
+
+    for (let i = 0; i < len; i++) {
+        while (!empty() && arr[i] > arr[top()]) {
+            const t = top();
+            stack.pop();
+            if (empty()) {
+                break;
+            }
+            const h = Math.min(arr[top()], arr[i]) - arr[t];
+            const w = i - top() - 1;
+            result += h * w;
+        }
+        stack.push(i);
+    }
+    return result;
+};
+
+maxWater([3, 1, 2, 5, 2, 4]);

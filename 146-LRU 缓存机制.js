@@ -75,6 +75,31 @@ LRUCache.prototype.put = function (key, value) {
         this.removeTail();
     }
 };
+function LRU(operators, k) {
+    const L = new LRUCache(k);
+    const result = [];
+    for (let i = 0; i < operators.length; i++) {
+        const r = operators[i];
+        if (r[0] === 1) {
+            L.put(r[1], r[2]);
+        } else {
+            result.push(L.get(r[1]));
+        }
+    }
+    return result;
+}
+
+LRU(
+    [
+        [1, 1, 1],
+        [1, 2, 2],
+        [1, 3, 2],
+        [2, 1],
+        [1, 4, 4],
+        [2, 2]
+    ],
+    3
+);
 /**
  * Your LRUCache object will be instantiated and called as such:
  * var obj = new LRUCache(capacity)
@@ -82,35 +107,35 @@ LRUCache.prototype.put = function (key, value) {
  * obj.put(key,value)
  */
 
-const lRUCache = new LRUCache(2);
-lRUCache.put(1, 1); // 缓存是 {1=1}
-console.log(lRUCache);
+// const lRUCache = new LRUCache(2);
+// lRUCache.put(1, 1); // 缓存是 {1=1}
+// console.log(lRUCache);
 
-lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
-console.log(lRUCache);
+// lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+// console.log(lRUCache);
 
-let a = lRUCache.get(1); // 返回 1
-console.log(lRUCache);
-console.log(a);
+// let a = lRUCache.get(1); // 返回 1
+// console.log(lRUCache);
+// console.log(a);
 
-lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
-console.log(lRUCache);
+// lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+// console.log(lRUCache);
 
-let b = lRUCache.get(2); // 返回 -1 (未找到)
-console.log(lRUCache);
-console.log(b);
+// let b = lRUCache.get(2); // 返回 -1 (未找到)
+// console.log(lRUCache);
+// console.log(b);
 
-lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
-console.log(lRUCache);
+// lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+// console.log(lRUCache);
 
-let c = lRUCache.get(1); // 返回 -1 (未找到)
-console.log(lRUCache);
-console.log(c);
+// let c = lRUCache.get(1); // 返回 -1 (未找到)
+// console.log(lRUCache);
+// console.log(c);
 
-let d = lRUCache.get(3); // 返回 3
-console.log(lRUCache);
-console.log(d);
+// let d = lRUCache.get(3); // 返回 3
+// console.log(lRUCache);
+// console.log(d);
 
-let e = lRUCache.get(4); // 返回 4
-console.log(lRUCache);
-console.log(e);
+// let e = lRUCache.get(4); // 返回 4
+// console.log(lRUCache);
+// console.log(e);
