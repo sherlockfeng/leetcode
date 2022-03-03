@@ -11,11 +11,11 @@ function TreeNode(val) {
     this.left = this.right = null;
 }
 const head = new TreeNode(1);
-// head.left = new TreeNode(9);
+head.left = new TreeNode(9);
 head.right = new TreeNode(2);
 
-// head.left.left = new TreeNode(15);
-// head.left.right = new TreeNode(7);
+head.left.left = new TreeNode(15);
+head.left.right = new TreeNode(7);
 
 console.log(head);
 
